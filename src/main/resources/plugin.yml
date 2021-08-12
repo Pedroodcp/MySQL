@@ -1,0 +1,6 @@
+name: MySQL
+version: 1.0
+author: Pedrodcp
+main: br.com.pedrodcp.mysql.Main
+commands:
+  teste:
