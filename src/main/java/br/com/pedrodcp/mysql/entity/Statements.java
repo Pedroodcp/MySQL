@@ -32,7 +32,7 @@ public class Statements {
         try {
             PreparedStatement ps = connection.prepareStatement("SELECT * FROM config");
             ResultSet rs = ps.executeQuery();
-            while (rs.next()) PlayerOBJ.players.add(new PlayerOBJ(rs.getString("nickname"), rs.getInt("number"), rs.getString("zero")));
+            while (rs.next()) OBJ.players.add(new OBJ(rs.getString("nickname"), rs.getInt("number"), rs.getString("zero")));
             rs.close();
             ps.close();
         } catch (SQLException e) {
@@ -60,7 +60,7 @@ public class Statements {
             openConnection();
             PreparedStatement prepareStatement = connection.prepareStatement("UPDATE config SET number=?, zero=? WHERE nickname=?");
             PreparedStatement ps = connection.prepareStatement("INSERT INTO config (nickname, number, zero) VALUES (?, ?, ?)");
-            for (PlayerOBJ playerAccount : PlayerOBJ.players) {
+            for (OBJ playerAccount : OBJ.players) {
                 if (exists(playerAccount.getPlayerName())) {
                     prepareStatement.setString(3, playerAccount.getPlayerName().toLowerCase());
                     prepareStatement.setInt(1, playerAccount.getNumber());

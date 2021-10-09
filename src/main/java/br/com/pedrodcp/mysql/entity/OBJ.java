@@ -2,15 +2,15 @@ package br.com.pedrodcp.mysql.entity;
 
 import java.util.ArrayList;
 
-public class PlayerOBJ {
+public class OBJ {
 
-    public static ArrayList<PlayerOBJ> players = new ArrayList<>();
+    public static ArrayList<OBJ> players = new ArrayList<>();
 
     private String playerName;
     private int number;
     private String texto;
 
-    public PlayerOBJ(String playerName, int number, String texto) {
+    public OBJ(String playerName, int number, String texto) {
         this.playerName = playerName;
         this.number = number;
         this.texto = texto;

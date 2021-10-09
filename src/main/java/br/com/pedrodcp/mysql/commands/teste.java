@@ -1,7 +1,7 @@
 package br.com.pedrodcp.mysql.commands;
 
-import br.com.pedrodcp.mysql.entity.PlayerManager;
-import br.com.pedrodcp.mysql.entity.PlayerOBJ;
+import br.com.pedrodcp.mysql.entity.OBJ;
+import br.com.pedrodcp.mysql.entity.SQLManager;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -15,7 +15,7 @@ public class teste implements CommandExecutor {
         Player p = (Player) s;
 
         if (c.getName().equalsIgnoreCase("teste")) {
-            PlayerOBJ playerAccount = PlayerManager.getPlayer(p.getName());
+            OBJ playerAccount = SQLManager.getPlayer(p.getName());
             playerAccount.setNumber(playerAccount.getNumber() + 1);
             if (playerAccount.getNumber() >= 1) {
                 playerAccount.setTexto("Não");

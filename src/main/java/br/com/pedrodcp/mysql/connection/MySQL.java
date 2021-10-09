@@ -23,7 +23,7 @@ public class MySQL implements Model {
     public Connection getConnection() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            return DriverManager.getConnection(String.format("jdbc:mysql://%s:%s/%s", host, port, database), user, password);
+            return DriverManager.getConnection(String.format("jdbc:mysql://%s:%s/%s?autoReconnect=true", host, port, database), user, password);
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
